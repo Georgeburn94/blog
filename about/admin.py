@@ -6,5 +6,5 @@ from django_summernote.admin import SummernoteModelAdmin
 @admin.register(About)
 class AboutAdmin(SummernoteModelAdmin):
 
-    list_display = ('title', 'bio',)
-    summernote_fields = ('bio',)
+    list_display = ('title', 'updated_on')
+    fields = ('title', 'bio', 'updated_on')

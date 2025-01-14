@@ -30,8 +30,10 @@ body {
 }
 
 .card {
-    border: none;
+    border: 1px solid #000000;
     background-color: transparent;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
 }
 
 .image-container {
@@ -44,6 +46,8 @@ body {
     min-width: 30%;
     left: -2px;
     background-color: #188181;
+    border-radius: 5px;
+    padding: 2px;
 }
 
 .scale {

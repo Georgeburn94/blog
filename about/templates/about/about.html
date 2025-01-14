@@ -8,9 +8,9 @@
         </div>
         <div class="col-8">
             <!-- Title goes between these h2 tags -->
-            <h2>{{ most_recent_record.title }}</h2>
+            <h2>{{ most_recent_record.title | safe}}</h2>
             <!-- Content goes directly underneath this -->
-             {{ most_recent_record.bio }}
+            {{ most_recent_record.bio | safe}}
         </div>
     </div>
     <div class="row">
@@ -18,6 +18,6 @@
             <!-- Updated on field goes in here -->
             <p class="text-end"><em>Updated on: {{ most_recent_record.updated_on }}</em></p>
         </div>
-      </div>
+    </div>
 </div>
 {% endblock content %}
