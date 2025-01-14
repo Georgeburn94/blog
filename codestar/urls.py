@@ -23,5 +23,6 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('about/', include('about.urls')),
     path("accounts/", include("allauth.urls")),
+    path('', include('blog.urls')),  # Include blog.urls at the root level
 ]
 
