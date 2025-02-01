@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 
@@ -14,15 +15,22 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
+                                {% if "placeholder" in post.featured_image.url %}
+                                <img class="card-img-top" src="{% static 'images/default.jpg' %}"
+                                    alt="placeholder image">
+                                {% else %}
+                                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+                                {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author: {{ post.author }}</p>
                                 </div>
                             </div>
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                <h4 class="card-title">{{ post.title }}</h4></a>
-                                <p class="card-text"> {{ post.excerpt }} </p>
-                            
-                            <hr/>
+                                <h4 class="card-title">{{ post.title }}</h4>
+                            </a>
+                            <p class="card-text"> {{ post.excerpt }} </p>
+
+                            <hr />
                             <p class="card-text text-muted h6">{{ post.created_on}}
                             </p>
                         </div>
@@ -58,4 +66,3 @@
 {% block copyright %}
 <p class="m-0 text-center text-white">Copyright 2025 George Burn</p>
 {% endblock %}
-
